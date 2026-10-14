@@ -9,7 +9,7 @@ public class Payment {
   private double amount;
   private PaymentStatus status;
   private final LocalDateTime createdAt;
-  private final Customer customer;     // association: a reference to an independent object
+  private final Customer customer;     // association: a reference to an independent object  -- means Payment can't point to a different customer
 
   // constructors
   public Payment(Customer customer, double amount, String currency) {
@@ -50,8 +50,8 @@ public class Payment {
     return id;
   }
 
-  public Customer getCustomer() {
-    return customer;
+  public String getCustomerName() {
+    return customer.getName();
   }
 
   public String getCurrency() {
